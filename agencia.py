@@ -63,7 +63,7 @@ def menu_principal(destinos, clientes):
                 pause_screen()
             case '4':
                 borrar_cliente(clientes)
-                pause_screen
+                pause_screen()
             case '5':
                 realizar_reserva(clientes, destinos)
                 pause_screen()
