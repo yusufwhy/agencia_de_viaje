@@ -49,7 +49,7 @@ def menu_principal(destinos, clientes):
 
         print('¿Qué operación quieres realizar?')
         print(f' 1) Añadir un nuevo destino\n 2) Borrar un destino\n 3) Añadir un nuevo cliente\n 4) Borrar un cliente\n 5) Realizar una reserva\n 6) Cancelar una reserva\n 7) Mostrar todos los destinos\n 8) Mostrar todos los clientes\n 9) Mostrar todos las reservas\n 10) Salir del programa')
-        opcion = input()
+        opcion = input('')
 
         match(opcion):
             case '1':
