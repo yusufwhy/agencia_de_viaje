@@ -21,6 +21,7 @@ def addDestino(listaDestino):
     print(f'El nuevo destino {nombreDestino} con código {codigoDestino} se ha añadido con éxito y su precio será €{precioDestino}.')
     listaDestino.append(nuevoDestino)
     print(listaDestino)
+    
 def showDestino(listaDestino):
 # add ese código al inicio del principal: listaDestino = []
     for j, destinos in enumerate(listaDestino):
