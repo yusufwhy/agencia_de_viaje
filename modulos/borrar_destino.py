@@ -7,7 +7,7 @@ def borrar_destino(destinos):
         Entradas:
             - Código del destino
             - Nombre del destino
-            - Precio del destino
+
 
         Salidas:
             - Lista de destinos actualizada
@@ -17,7 +17,7 @@ def borrar_destino(destinos):
         print(f'Tenemos destinos en nuestra base de datos.\n')
         md(destinos)
         
-        print(f'A continuación vas a borrar un destino de nuestra base de datos.\n Necesitarás:\n \t-Código de destino\n \t-Nombre del destino\n \t-Precio del destino (€)')
+        print(f'A continuación vas a borrar un destino de nuestra base de datos.\n Necesitarás:\n \t-Código de destino\n \t-Nombre del destino\n')
         
         while True:
             codigo = input('Introduce el código asociado al destino').lower()
@@ -28,23 +28,15 @@ def borrar_destino(destinos):
                 break
                 
         while True:
-            destino = input('Introduce el destino').lower()
+            destinoPedido = input('Introduce el destino').lower()
             
-            if not destino:
+            if not destinoPedido:
                 print(f'\nNo has introducido un destino.')
             else:
                 break
 
-        while True:
-            try:
-                precio= float(input(f'Introduce (en €) el precio de ir al destino {destino.title()}: '))
-                break
-            
-            except ValueError:
-                print('Has de introducir el precio (en €) como un número.')
-
         for destino in destinos:
-            if codigo == destino['codigo destino'] and destino == destino['nombre destino'] and precio == destino['precio destino']:
+            if codigo == destino['codigo destino'] and destinoPedido == destino['nombre destino']:
                 destinos.remove(destino)
  
     else:
