@@ -20,7 +20,7 @@ def realizar_reserva(clientes, destinos):
 
             print(f'Lista de Clientes:\n')
             for cliente in clientes:
-                print(f" ID cliente: {cliente['id cliente'].title()} | Cliente: {cliente['nombre cliente'].title()}")
+                print(f" ID cliente: {cliente['id cliente'].title()} | Cliente: {cliente['nombre cliente'].title()}\n")
 
             codigo_destino = input('Introduce el código del destino para hacer la reserva').lower()
             id_cliente = input('Introduce el ID del cliente del que quieres hacer la reserva').lower()
@@ -35,7 +35,7 @@ def realizar_reserva(clientes, destinos):
             if lista_clientes:
                  pass
             else:
-                 print('No nos consta este ID de cliente en nuestra base de datos')
+                 print('No nos consta este ID de cliente en nuestra base de datos\n')
                  
             lista_destinos = []
             
@@ -47,7 +47,7 @@ def realizar_reserva(clientes, destinos):
             if lista_destinos:
                  pass
             else:
-                 print('No nos consta este codigo de destino en nuestra base de datos')
+                 print('No nos consta este codigo de destino en nuestra base de datos\n')
 
             if lista_clientes and lista_destinos:
                 cliente['reserva'] = True
@@ -57,12 +57,12 @@ def realizar_reserva(clientes, destinos):
                 cliente['precio destino']= destino['precio destino']
             
             else:
-                print('No has introducido un ID de cliente o un código de destino válidos')
+                print('No has introducido un ID de cliente o un código de destino válidos\n')
 
         else:
-            print('No se puede realizar una reserva porque no hay destinos o clientes')
+            print('No se puede realizar una reserva porque no hay destinos o clientes\n')
         
-        print(f'La reserva del cliente con ID {id_cliente} en el destino con código {codigo_destino} se ha añadido con éxito.')
+        print(f'La reserva del cliente con ID {id_cliente} en el destino con código {codigo_destino} se ha añadido con éxito.\n')
         epilogue = input('Para seguir haciendo cancelando reservas presiona enter. Si no, puedes presionar * para volverte al menu principal. \n')
         if epilogue == '*':
             break
