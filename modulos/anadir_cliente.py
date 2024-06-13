@@ -5,12 +5,13 @@ def anadir_cliente(clientes):
         Función que permite añadir un nuevo cliente a la lista "clientes".
 
         Entradas:
-            - ID del cliente
             - Nombre del cliente
         
         Salidas:
             - Lista de clientes actualizada
     '''
+    index = len(clientes)
+
     while True:
         if clientes:
             print(f'Tenemos clientes en nuestra base de datos\n')
@@ -18,28 +19,28 @@ def anadir_cliente(clientes):
         else:
             print(f'No hay clientes en nuestra base de datos\n')
 
-        print(f'A continuación vas a introducir un nuevo cliente a nuestra base de datos.\n Necesitarás:\n \t-ID del cliente\n \t-Nombre del cliente')
+        print(f'A continuación vas a introducir un nuevo cliente a nuestra base de datos.\n Necesitarás:\n \t-Nombre del cliente')
         
-        while True:
-            id_cliente = input('Introduce el ID asociado al cliente').lower()
 
-            if not id_cliente:
-                print(f'\nNo has introducido un ID de cliente')
-            else:
-                break
         while True:
             nombre_cliente = input('Introduce el nombre del cliente').lower()
 
             if not nombre_cliente:
                 print(f'\nNo has introducido un nombre de cliente')
-            else:
+            
+            elif not nombre_cliente.isdigit():
+                index += 1
+                id_cliente = str(index) + ''.join([word[0] for word in nombre_cliente.split()])
                 break
+            else:
+                print('El nombre del cliente no puede ser de números sólo: \t')
+
 
         clientes.append({'codigo destino': '', 'nombre destino': '', 'precio destino': '', 'reserva': False, 'codigo destino': '', 'id cliente': id_cliente, 'nombre cliente': nombre_cliente })
         
         print(f'El nuevo cliente {nombre_cliente} con ID {id_cliente} se ha añadido con éxito.')
         
-        epilogue = input('Para seguir presiona enter. Si no, puedes presionar * para volverte al menu principal. \n')
+        epilogue = input('Para seguir introduciendo clientes presiona enter. Si no, puedes presionar * para volverte al menu principal. \n')
         if epilogue == '*':
             break
         else:
