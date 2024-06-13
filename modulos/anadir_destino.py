@@ -12,41 +12,49 @@ def anadir_destino(destinos):
         Salidas:
             - Lista de destinos actualizada
     '''
-
-    if destinos:
-        print(f'Tenemos destinos en nuestra base de datos.\n')
-        md(destinos)
-    else:
-        print('No hay destinos en nuestra base de datos')
-
-    print(f'A continuación vas a introducir un nuevo destino a nuestra base de datos.\n Necesitarás:\n \t-Código de destino\n \t-Nombre del destino\n \t-Precio del destino (€)')
-    
     while True:
-        codigo = input('Introduce el código asociado al destino').lower()
-
-        if not codigo:
-            print(f'\nNo has introducido un código de destino')
+        if destinos:
+            print(f'Tenemos destinos en nuestra base de datos.\n')
+            md(destinos)
         else:
-            break
+            print('No hay destinos en nuestra base de datos')
+
+        print(f'A continuación vas a introducir un nuevo destino a nuestra base de datos.\n Necesitarás:\n \t-Código de destino\n \t-Nombre del destino\n \t-Precio del destino (€)')
+        
+        while True:
+            codigo = input('Introduce el código asociado al destino').lower()
+
+            if not codigo:
+                print(f'\nNo has introducido un código de destino')
+            else:
+                break
+                
+        while True:
+            destino = input('Introduce el destino').lower()
             
-    while True:
-        destino = input('Introduce el destino').lower()
+            if not destino:
+                print(f'\nNo has introducido un destino.')
+            else:
+                break
+
+        while True:
+            try:
+                precio= float(input(f'Introduce (en €) el precio de ir al destino {destino.title()}: '))
+                break
+            
+            except ValueError:
+                print('Has de introducir el precio (en €) como un número.')
         
-        if not destino:
-            print(f'\nNo has introducido un destino.')
+        destinos.append({'codigo destino': codigo, 'nombre destino': destino, 'precio destino': precio})
+        
+        print(f'El nuevo destino {destino} con código {codigo} se ha añadido con éxito y su precio será {precio} €.')
+        
+        epilogue = input('Para seguir añadiendo destinos presiona enter. Si no, puedes presionar * para volverte al menu principal. \n')
+        if epilogue == '*':
+            break
         else:
-            break
+            continue
 
-    while True:
-        try:
-            precio= float(input(f'Introduce (en €) el precio de ir al destino {destino.title()}: '))
-            break
-        
-        except ValueError:
-            print('Has de introducir el precio (en €) como un número.')
 
-    destinos.append({'codigo destino': codigo, 'nombre destino': destino, 'precio destino': precio})
-    
-    # Falta evitar repeticiones de destinos ya hechos.
 
     return destinos
