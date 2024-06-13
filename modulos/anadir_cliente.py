@@ -16,7 +16,7 @@ def anadir_cliente(clientes):
             print(f'Tenemos clientes en nuestra base de datos\n')
             mc(clientes)
         else:
-            print(f'No hay clientes en nuestra base de datos\n')
+            print(f'No hay clientes en la base de datos\n')
         print(f'A continuación vas a introducir un nuevo cliente a nuestra base de datos.\n Se recomendará introducir ambos el nombre y el apellido del cliente\n')
         
         while True:
