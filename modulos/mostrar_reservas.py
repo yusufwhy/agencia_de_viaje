@@ -15,8 +15,8 @@ def mostrar_reservas(clientes, destinos):
         else:
             contador +=1
             if contador == len(clientes):
-                print('No hay reservas realizadas por nuestros clientes.')
+                print('No hay reservas realizadas por nuestros clientes.\n')
             else:
                 pass
     else:
-        print('No se puede mostrar la lista de reservas porque no hay destinos o clientes en la base de datos')
+        print('No se puede mostrar la lista de reservas porque no hay destinos o clientes en la base de datos\n')
