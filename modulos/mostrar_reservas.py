@@ -9,7 +9,7 @@ def mostrar_reservas(clientes, destinos):
 
         for cliente in clientes:
             if cliente['reserva'] == True:
-                print(f"ID cliente: {cliente['id cliente']} | Nombre cliente: {cliente['nombre cliente'].title()} | Código destino: {cliente['codigo destino']} | Nombre destino: {cliente['nombre destino'].title()}| Nombre destino: {cliente['precio destino']}\n")
+                print(f"ID cliente: {cliente['id cliente']} | Nombre cliente: {cliente['nombre cliente'].title()} | Código destino: {cliente['codigo destino']} | Nombre destino: {cliente['nombre destino'].title()}| Precio: {cliente['precio destino']}\n")
                          
         
         else:
