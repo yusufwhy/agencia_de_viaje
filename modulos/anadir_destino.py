@@ -8,6 +8,8 @@ def anadir_destino(destinos):
             - Código del destino
             - Nombre del destino
             - Precio del destino
+        Operaciones:
+            -Añadir a la lista de destinos los destinos que quiera el usuario (se le solicita si quiere continuar o no con *)
 
         Salidas:
             - Lista de destinos actualizada
@@ -47,7 +49,7 @@ def anadir_destino(destinos):
         
         destinos.append({'codigo destino': codigo, 'nombre destino': destino, 'precio destino': precio})
         
-        print(f'El nuevo destino {destino} con código {codigo} se ha añadido con éxito y su precio será {precio} €.')
+        print(f'El nuevo destino {destino.title()} con código {codigo} se ha añadido con éxito y su precio será {precio} €.')
         
         epilogue = input('Para seguir añadiendo destinos presiona enter. Si no, puedes presionar * para volverte al menu principal. \n')
         if epilogue == '*':

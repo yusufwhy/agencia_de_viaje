@@ -6,36 +6,42 @@ def anadir_cliente(clientes):
 
         Entradas:
             - Nombre del cliente
-        
+                    
+        Operaciones:
+            - Primero: Verifica mediante un IF si hay clientes o no y printa el mensaje correspondiente.
+                - El ID del cliente se genera automaticamente.
+            - Segundo: Avisa al usuario sobre qué datos va a necesitar.
+            - Tercero: Pide los datos y verifica que no se añadan datos vacios mediante el uso de bucles while y decisiones if not.
+
         Salidas:
             - Lista de clientes actualizada
     '''
-    index = len(clientes)
+    if clientes:
+        print(f'Tenemos clientes en nuestra base de datos\n')
+        mc(clientes)
+    else:
+        print(f'No hay clientes en nuestra base de datos\n')
+
+    print(f'A continuación vas a introducir un nuevo cliente a nuestra base de datos.\n Necesitarás:\n \t-ID del cliente\n \t-Nombre del cliente')
+    
     while True:
-        if clientes:
-            print(f'Tenemos clientes en nuestra base de datos\n')
-            mc(clientes)
+        id_cliente = input('Introduce el ID asociado al cliente').lower()
+
+        if not id_cliente:
+            print(f'\nNo has introducido un ID de cliente')
         else:
-            print(f'No hay clientes en la base de datos\n')
-        print(f'A continuación vas a introducir un nuevo cliente a nuestra base de datos.\n Se recomendará introducir ambos el nombre y el apellido del cliente\n')
-        
-        while True:
-            nombre_cliente = input('Introduce el nombre del cliente').lower()
-            if not nombre_cliente:
-                print(f'\nNo has introducido un nombre de cliente')
-            elif not nombre_cliente.isdigit():
-                index += 1
-                id_cliente = str(index) + ''.join([word[0] for word in nombre_cliente.split()])
-                break
-            else:
-                print('El nombre del cliente no puede ser de números sólo.')
-        clientes.append({'codigo destino': '', 'nombre destino': '', 'precio destino': '', 'reserva': False, 'codigo destino': '', 'id cliente': id_cliente, 'nombre cliente': nombre_cliente })
-        print(f'El nuevo cliente {nombre_cliente} con ID {id_cliente} se ha añadido con éxito.')
-        
-        epilogue = input('Para seguir introduciendo clientes presiona enter. Si no, puedes presionar * para volverte al menu principal. \n')
-        if epilogue == '*':
             break
+    
+    while True:
+        nombre_cliente = input('Introduce el nombre del cliente').lower()
+
+        if not nombre_cliente:
+            print(f'\nNo has introducido un nombre de cliente')
         else:
-            continue
+            break
+   
+    clientes.append({'codigo destino': '', 'nombre destino': '', 'precio destino': '', 'reserva': False, 'codigo destino': '', 'id cliente': id_cliente, 'nombre cliente': nombre_cliente })
+    
+    print(f'Nuevo cliente {nombre_cliente} con ID {id_cliente} añadido con éxito')
 
     return clientes
