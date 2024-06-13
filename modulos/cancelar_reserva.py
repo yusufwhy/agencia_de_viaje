@@ -42,7 +42,7 @@ def cancelar_reserva(clientes, destinos):
             print('No se puede cancelar una reserva porque no hay destinos o clientes')
                 
         print(f'La reserva del cliente con ID {id_cliente} en el destino con código {codigo_destino} se ha cancelado con éxito.')
-        epilogue = input('Para seguir haciendo cancelando reservas presiona enter. Si no, puedes presionar * para volverte al menu principal. \n')
+        epilogue = input('Para seguir cancelando reservas presiona enter. Si no, puedes presionar * para volverte al menu principal. \n')
         if epilogue == '*':
             break
         else:
