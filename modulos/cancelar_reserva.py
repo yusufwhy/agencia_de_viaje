@@ -18,10 +18,10 @@ def cancelar_reserva(clientes, destinos):
                 if cliente['reserva'] == True:
 
                     for cliente in clientes:
-                        print(f"Código destino: {cliente['codigo destino']} | Destino: {cliente['nombre destino'].title()} | ID cliente: {cliente['id cliente']} | Cliente: {cliente['nombre cliente'].title()}")
+                        print(f"Código destino: {cliente['codigo destino']} | Destino: {cliente['nombre destino'].title()} | ID cliente: {cliente['id cliente']} | Cliente: {cliente['nombre cliente'].title()}\n")
 
-                    codigo_destino = input('Introduce el código del destino donde vas cancelar la reserva').lower()
-                    id_cliente = input('Introduce el ID del cliente para cancelar su reserva').lower()
+                    codigo_destino = input('Introduce el código del destino donde vas cancelar la reserva\n').lower()
+                    id_cliente = input('Introduce el ID del cliente para cancelar su reserva\n').lower()
 
                     for cliente in clientes:
                         if codigo_destino == cliente['codigo destino'] and id_cliente == cliente['id cliente']:
@@ -34,14 +34,14 @@ def cancelar_reserva(clientes, destinos):
                                 cliente['nombre destino'] = ''
                                 cliente['precio destino'] = ''
                     
-                    print('Reserva anulada')
+                    print('Reserva anulada\n')
 
                 else:
-                    print('No tenemos reservas en nuestra base de datos')
+                    print('No tenemos reservas en nuestra base de datos\n')
         else:
-            print('No se puede cancelar una reserva porque no hay destinos o clientes')
+            print('No se puede cancelar una reserva porque no hay destinos o clientes\n')
                 
-        print(f'La reserva del cliente con ID {id_cliente} en el destino con código {codigo_destino} se ha cancelado con éxito.')
+        print(f'La reserva del cliente con ID {id_cliente} en el destino con código {codigo_destino} se ha cancelado con éxito.\n')
         epilogue = input('Para seguir cancelando reservas presiona enter. Si no, puedes presionar * para volverte al menu principal. \n')
         if epilogue == '*':
             break

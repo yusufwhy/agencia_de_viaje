@@ -20,18 +20,18 @@ def borrar_destino(destinos):
         print(f'A continuación vas a borrar un destino de nuestra base de datos.\n Necesitarás:\n \t-Código de destino\n \t-Nombre del destino\n \t-Precio del destino (€)')
         
         while True:
-            codigo = input('Introduce el código asociado al destino').lower()
+            codigo = input('Introduce el código asociado al destino\n').lower()
 
             if not codigo:
-                print(f'\nNo has introducido un código de destino')
+                print(f'No has introducido un código de destino\n')
             else:
                 break
                 
         while True:
-            destino = input('Introduce el destino').lower()
+            destino = input('Introduce el destino\n').lower()
             
             if not destino:
-                print(f'\nNo has introducido un destino.')
+                print(f'No has introducido un destino.\n')
             else:
                 break
 
@@ -41,14 +41,14 @@ def borrar_destino(destinos):
                 break
             
             except ValueError:
-                print('Has de introducir el precio (en €) como un número.')
+                print('Has de introducir el precio (en €) como un número.\n')
 
         for destino in destinos:
             if codigo == destino['codigo destino'] and destino == destino['nombre destino'] and precio == destino['precio destino']:
                 destinos.remove(destino)
  
     else:
-        print('No hay destinos en nuestra base de datos')
+        print('No hay destinos en nuestra base de datos\n')
 
 
     return destinos

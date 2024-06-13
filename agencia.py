@@ -47,7 +47,7 @@ def menu_principal(destinos, clientes):
     while True:
         clear_screen()
 
-        print('¿Qué operación quieres realizar?')
+        print('¿Qué operación quieres realizar?\n')
         print(f' 1) Añadir un nuevo destino\n 2) Borrar un destino\n 3) Añadir un nuevo cliente\n 4) Borrar un cliente\n 5) Realizar una reserva\n 6) Cancelar una reserva\n 7) Mostrar todos los destinos\n 8) Mostrar todos los clientes\n 9) Mostrar todos las reservas\n 10) Salir del programa')
         opcion = input('')
 
@@ -80,10 +80,10 @@ def menu_principal(destinos, clientes):
                 mostrar_reservas(clientes, destinos)
                 pause_screen()
             case '10':
-                print('Has seleccionado salir. Adios.')
+                print('\nHas seleccionado salir.\n\t Adios.')
                 break
             case _:
-                print('Opción no contemplada')
+                print('Opción no contemplada\n')
                 pause_screen()
 
 if __name__ == '__main__':
